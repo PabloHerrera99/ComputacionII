@@ -18,7 +18,7 @@ def main():
 
     op = open(args.output, "w")
     op.write(format(out))
-    op.close
+    op.close()
     key = "key" + format(out)
 
     lf = open(args.log, "w")
