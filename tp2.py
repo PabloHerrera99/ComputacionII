@@ -1,6 +1,3 @@
-from asyncio import subprocess
-from contextlib import nullcontext
-import os
 import argparse
 from datetime import datetime
 import subprocess
@@ -16,14 +13,14 @@ def main():
     com = subprocess.Popen(args.command, shell= True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     out, err = com.communicate()
 
-    op = open(args.output, "w")
-    op.write(format(out))
+    op = open(args.output, "a")
+    op.write(format(out)+ '\n')
     op.close()
     key = "key" + format(out)
 
-    lf = open(args.log, "w")
+    lf = open(args.log, "a")
     if key != "key":
-        lf.write(str(datetime.now()) + ":     Ejecutado Correctamente")
+        lf.write(str(datetime.now()) + ":     Ejecutado Correctamente" + '\n')
     else:
         lf.write(str(datetime.now()) + ":     " + format(err))
     lf.close 
