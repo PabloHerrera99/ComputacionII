@@ -23,7 +23,7 @@ def main():
         lf.write(str(datetime.now()) + ":     Ejecutado Correctamente" + '\n')
     else:
         lf.write(str(datetime.now()) + ":     " + format(err))
-    lf.close 
+    lf.close()
 
 if __name__ == '__main__':
     main()
