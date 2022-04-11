@@ -10,7 +10,7 @@ def main():
     parser.add_argument("-l", "--log", type = str, required=True, help = "log file")
     args = parser.parse_args()
 
-    com = subprocess.Popen(args.command, shell= True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    com = subprocess.Popen(args.command, shell = True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     out, err = com.communicate()
 
     op = open(args.output, "a")
